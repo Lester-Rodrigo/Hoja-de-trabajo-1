@@ -14,7 +14,12 @@ public class CarRadio implements Radio {
 
     @Override
     public void PowerOn() {
-        OnOff = true;
+        if (OnOff == false){
+            OnOff = true;
+        }
+        else{
+            OnOff = false;
+        }
     }
 
     @Override
@@ -83,7 +88,22 @@ public class CarRadio implements Radio {
     }
 
     @Override
-    public void PowerOff() {
-        OnOff = false;
-    } 
+    public float getCurrentStation(){
+        return currentStation;
+    }
+
+    @Override
+    public boolean isRadioAM(){
+        if(modulation.equals("AM")){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
+    @Override
+    public boolean isRadioOn(){
+        return OnOff;
+    }
 }
