@@ -5,7 +5,7 @@ public interface Radio {
     void MoveStationBackward ();
     void SaveToFavorite (int position);
     float GoFavorite (int position);
-    void PowerOff();
-
-
+    float getCurrentStation();
+    boolean isRadioAM();
+    boolean isRadioOn();
 }
