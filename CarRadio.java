@@ -9,7 +9,7 @@ public class CarRadio implements Radio {
         this.OnOff = false;
         this.modulation = "AM";
         this.currentStation = 530f;
-        this.favoriteStation = new float[12]; 
+        this.favoriteStation = new float[13]; 
     }
 
     @Override
@@ -60,7 +60,7 @@ public class CarRadio implements Radio {
 
     @Override
     public void SaveToFavorite(int saveSlot) {
-        if (saveSlot < 0 || saveSlot >= favoriteStation.length) {
+        if (saveSlot < 1 || saveSlot >= favoriteStation.length + 1) {
             System.out.println("Error, por favor ingrese una posición válida.");
             return;
         }
@@ -71,7 +71,7 @@ public class CarRadio implements Radio {
     @Override
     public float GoFavorite(int saveSlot) { 
         float previousStation = currentStation;
-        if (saveSlot < 0 || saveSlot >= favoriteStation.length) {
+        if (saveSlot < 1 || saveSlot >= favoriteStation.length + 1) {
             System.out.println("Error, por favor ingrese una posición válida.");
         }
         currentStation = favoriteStation[saveSlot];

@@ -60,14 +60,14 @@ public class Main {
                         break;
 
                     case 4:
-                        System.out.println("Ingrese el número de posición (0-11) para guardar la emisora: ");
+                        System.out.println("Ingrese el número de posición (1-12) para guardar la emisora: ");
                         int saveSlot = scanner.nextInt();
                         radio.SaveToFavorite(saveSlot);
                         System.out.println("-------------------------------------------------------------"); 
                         break;
 
                     case 5:
-                        System.out.println("Ingrese el número de posición (0-11) para seleccionar la emisora guardada: ");
+                        System.out.println("Ingrese el número de posición (1-12) para seleccionar la emisora guardada: ");
                         int favoriteSlot = scanner.nextInt();
                         radio.GoFavorite(favoriteSlot);
                         System.out.println("-------------------------------------------------------------"); 
