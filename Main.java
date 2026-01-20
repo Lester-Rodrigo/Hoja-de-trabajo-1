@@ -97,5 +97,6 @@ public class Main {
                 }
             } while (pag != 7);
         }
+        scanner.close();
     }
 }
