@@ -31,7 +31,7 @@ public class CarRadio implements Radio {
             modulation = "AM";
             currentStation = 530f;
         }
-        System.out.println("Modulation changed to " + modulation);
+        System.out.println("Se cambió a: " + modulation);
     }
 
     @Override
@@ -70,18 +70,18 @@ public class CarRadio implements Radio {
 
     @Override
     public float GoFavorite(int saveSlot) { 
+        float previousStation = currentStation;
         if (saveSlot < 0 || saveSlot >= favoriteStation.length) {
             System.out.println("Error, por favor ingrese una posición válida.");
-            return -1;
         }
         currentStation = favoriteStation[saveSlot];
         if (currentStation < 530f && modulation.equals("AM")) {
             System.out.println("La estación guardada es FM y usted se encuentra en AM, cambie la modulación.");
-            return -1;
+            currentStation = previousStation;
         }
         else if (currentStation > 107.9f && modulation.equals("FM")) {
             System.out.println("La estación guardada es AM y usted se encuentra en FM, cambie la modulación.");
-            return -1;
+            currentStation = previousStation;
         }
         System.out.println("Estación actual: " + currentStation + " " + modulation);
         return currentStation;
@@ -104,6 +104,11 @@ public class CarRadio implements Radio {
 
     @Override
     public boolean isRadioOn(){
-        return OnOff;
+        if(OnOff == (true)){
+            return true;
+        }
+        else{
+            return false;
+        }
     }
 }
