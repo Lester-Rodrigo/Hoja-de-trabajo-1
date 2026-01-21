@@ -1,3 +1,5 @@
+//Valeria
+//Jose
 public class CarRadio2 implements Radio{
     private float currentStation; 
     private boolean powerOn;
