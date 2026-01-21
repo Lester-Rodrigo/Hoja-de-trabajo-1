@@ -3,6 +3,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         CarRadio radio = new CarRadio();
+        CarRadio2 radio2 = new CarRadio2();
         Scanner scanner = new Scanner(System.in);
         int pag;
         String mod;
@@ -14,23 +15,23 @@ public class Main {
         System.out.println("-------------------------------------------------------------"); 
         switch (pag) {
             case 1:
-                radio.PowerOn();
+                radio2.PowerOn();
                 break;
         
             case 2:
                 System.exit(0);
                 break;
         }
-        if (radio.isRadioOn() == true) {
+        if (radio2.isRadioOn() == true) {
             do {
                 do {
-                    if (radio.isRadioAM() == true) {
+                    if (radio2.isRadioAM() == true) {
                         mod = "AM";
                     }
                     else {
                         mod = "FM";
                     }
-                    System.out.println("Está escuchando: " + radio.getCurrentStation() + " " + mod);
+                    System.out.println("Está escuchando: " + radio2.getCurrentStation() + " " + mod);
                     System.out.println("1. Cambia de AM a FM a AM: ");
                     System.out.println("2. Avanzar en el dial de las emisoras: ");
                     System.out.println("3. Retroceder en el dial de las emisoras: ");
@@ -45,36 +46,36 @@ public class Main {
                 } while (pag < 1 || pag > 7);
                 switch (pag) {
                     case 1:
-                        radio.ChangeModulation();
+                        radio2.ChangeModulation();
                         System.out.println("-------------------------------------------------------------"); 
                         break;
                 
                     case 2:
-                        radio.MoveStationForward();
+                        radio2.MoveStationForward();
                         System.out.println("-------------------------------------------------------------"); 
                         break;
 
                     case 3:
-                        radio.MoveStationBackward();
+                        radio2.MoveStationBackward();
                         System.out.println("-------------------------------------------------------------"); 
                         break;
 
                     case 4:
                         System.out.println("Ingrese el número de posición (1-12) para guardar la emisora: ");
                         int saveSlot = scanner.nextInt();
-                        radio.SaveToFavorite(saveSlot);
+                        radio2.SaveToFavorite(saveSlot);
                         System.out.println("-------------------------------------------------------------"); 
                         break;
 
                     case 5:
                         System.out.println("Ingrese el número de posición (1-12) para seleccionar la emisora guardada: ");
                         int favoriteSlot = scanner.nextInt();
-                        radio.GoFavorite(favoriteSlot);
+                        radio2.GoFavorite(favoriteSlot);
                         System.out.println("-------------------------------------------------------------"); 
                         break;
 
                     case 6:
-                        radio.PowerOn();
+                        radio2.PowerOn();
                         System.out.println("1. Prender radio: ");
                         System.out.println("2. Salir: ");
                         System.out.println("Ingrese alguna opción (Del 1 al 2): ");
@@ -82,7 +83,7 @@ public class Main {
                         System.out.println("-------------------------------------------------------------"); 
                         switch (pag) {
                             case 1:
-                                radio.PowerOn();
+                                radio2.PowerOn();
                                 break;
                         
                             case 2:
